@@ -1,7 +1,9 @@
-   background-image: url(HAIKEI2.JPG);
+html,body{
+background-image: url(HAIKEI2.JPG);
     background-size: cover;
     opacity: 0.7;
-
+}
+   
 /* 星空の背景のスタイル */
 .stars {
   position: relative;
@@ -38,4 +40,5 @@
     transform: scale(1);
   }
 }
+
 
