@@ -1,226 +1,24 @@
-particlesJS("particles-js",{
-	"particles":{
-		"number":{
-			"value":38,//この数値を変更すると幾何学模様の数が増減できる
-			"density":{
-				"enable":true,
-				"value_area":800
-			}
-		},
-		"color":{
-			"value":"#ffffff"//色
-		},
-		"shape":{
-			"type":"polygon",//形状はpolygonを指定
-			"stroke":{
-				"width":0,
-			},
-	"polygon":{
-		"nb_sides":3//多角形の角の数
-	},
-	"image":{
-		"width":190,
-		"height":100
-	}
-	},
-		"opacity":{
-		"value":0.664994832269074,
-		"random":false,
-		"anim":{
-			"enable":true,
-			"speed":2.2722661797524872,
-			"opacity_min":0.08115236356258881,
-			"sync":false
-		}
-		},
-		"size":{
-			"value":3,
-			"random":true,
-			"anim":{
-				"enable":false,
-				"speed":40,
-				"size_min":0.1,
-				"sync":false
-			}
-		},
-		"line_linked":{
-			"enable":true,
-			"distance":150,
-			"color":"#ffffff",
-			"opacity":0.6,
-			"width":1
-		},
-		"move":{
-			"enable":true,
-			"speed":6,//この数値を小さくするとゆっくりな動きになる
-			"direction":"none",//方向指定なし
-			"random":false,//動きはランダムにしない
-			"straight":false,//動きをとどめない
-			"out_mode":"out",//画面の外に出るように描写
-			"bounce":false,//跳ね返りなし
-			"attract":{
-				"enable":false,
-				"rotateX":600,
-				"rotateY":961.4383117143238
-			}
-		}
-	},
-	"interactivity":{
-		"detect_on":"canvas",
-		"events":{
-			"onhover":{
-				"enable":false,
-				"mode":"repulse"
-			},
-	"onclick":{
-		"enable":false
-	},
-	"resize":true
-		}
-	},
-	"retina_detect":true
-}
-// {
-// 	"particles":{
-// 		"number":{
-// 			"value":346,//この数値を変更すると星の数が増減できる
-// 			"density":{
-// 				"enable":true,
-// 				"value_area":800
-// 			}
-// 		},
-// 		"color":{
-// 			"value":"#ffffff"
-// 		},
-// 		"shape":{
-// 			"type":"circle",//形状はcircleを指定
-// 			"stroke":{
-// 				"width":0
-// 			},
-// 			},
-// 		"opacity":{
-// 			"value":1,//シェイプの透明度
-// 			"random":true,//シェイプの透明度をランダムにする
-// 			"anim":{
-// 				"enable":true,//シェイプの透明度をアニメーションさせる
-// 				"speed":3,//シェイプの透明度をアニメーションさせる
-// 				"opacity_min":0,//透明度の最小値０
-// 				"sync":false//全てを同時にアニメーションさせない
-// 			}
-// 		},
-// 		"size":{
-// 			"value":2,
-// 			"random":true,
-// 			"anim":{
-// 				"enable":false,
-// 				"speed":4,
-// 				"size_min":0.3,
-// 				"sync":false
-// 			}
-// 		},
-// 		"line_linked":{
-// 			"enable":false,
-// 		},
-// 		"move":{
-// 			"enable":true,
-// 			"speed":120,//この数値を小さくするとゆっくりな動きになる
-// 		"direction":"none",//方向指定なし
-// 		"random":true,//動きはランダムに
-// 		"straight":true,//動きをとどめる
-// 			"out_mode":"out",
-// 			"bounce":false,
-// 			"attract":{
-// 				"enable":false,
-// 				"rotateX":600,
-// 				"rotateY":600
-// 			}
-// 		}
-// 	},
-// 	"interactivity":{
-// 		"detect_on":"canvas",
-// 		"events":{
-// 			"onhover":{
-// 				"enable":false,
-// 			},
-// 			"onclick":{
-// 				"enable":false,
-// 			},
-// 			"resize":true
-// 		}
-// 	},
-// 	"retina_detect":true
-// }
-);
+window.addEventListener("DOMContentLoaded", () => {
+  // 星を表示するための親要素を取得
+  const stars = document.querySelector(".stars");
 
-// 
+  // 星を生成する関数
+  const createStar = () => {
+    const starEl = document.createElement("span");
+    starEl.className = "star";
+    const minSize = 1; // 星の最小サイズを指定
+    const maxSize = 2; // 星の最大サイズを指定
+    const size = Math.random() * (maxSize - minSize) + minSize;
+    starEl.style.width = `${size}px`;
+    starEl.style.height = `${size}px`;
+    starEl.style.left = `${Math.random() * 100}%`;
+    starEl.style.top = `${Math.random() * 100}%`;
+    starEl.style.animationDelay = `${Math.random() * 10}s`;
+    stars.appendChild(starEl);
+  };
 
-particlesJS("particles-js1", {
-	"particles":{
-		"number":{
-			"value":346,//この数値を変更すると星の数が増減できる
-			"density":{
-				"enable":true,
-				"value_area":800
-			}
-		},
-		"color":{
-			"value":"#ffffff"
-		},
-		"shape":{
-			"type":"circle",//形状はcircleを指定
-			"stroke":{
-				"width":0
-			},
-			},
-		"opacity":{
-			"value":1,//シェイプの透明度
-			"random":true,//シェイプの透明度をランダムにする
-			"anim":{
-				"enable":true,//シェイプの透明度をアニメーションさせる
-				"speed":3,//シェイプの透明度をアニメーションさせる
-				"opacity_min":0,//透明度の最小値０
-				"sync":false//全てを同時にアニメーションさせない
-			}
-		},
-		"size":{
-			"value":2,
-			"random":true,
-			"anim":{
-				"enable":false,
-				"speed":4,
-				"size_min":0.3,
-				"sync":false
-			}
-		},
-		"line_linked":{
-			"enable":false,
-		},
-		"move":{
-			"enable":true,
-			"speed":120,//この数値を小さくするとゆっくりな動きになる
-		"direction":"none",//方向指定なし
-		"random":true,//動きはランダムに
-		"straight":true,//動きをとどめる
-			"out_mode":"out",
-			"bounce":false,
-			"attract":{
-				"enable":false,
-				"rotateX":600,
-				"rotateY":600
-			}
-		}
-	},
-	"interactivity":{
-		"detect_on":"canvas",
-		"events":{
-			"onhover":{
-				"enable":false,
-			},
-			"onclick":{
-				"enable":false,
-			},
-			"resize":true
-		}
-	},
-	"retina_detect":true
+  // for文で星を生成する関数を指定した回数呼び出す
+  for (let i = 0; i <= 500; i++) {
+    createStar();
+  }
 });
