@@ -1,41 +1,36 @@
-html,body{
-	height: 100%;/*高さを100%にして描画エリアをとる*/
+/* 星空の背景のスタイル */
+.stars {
+  position: relative;
+  width: 100%; /* 星空の横幅 */
+  height: 100vh; /* 星空の縦幅 */
+  background-image: linear-gradient(0deg, #00dedc, #115d89, #080f1c); /* 星空の背景色 */
+  overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */
 }
 
-#particles-js{ 
-	position:fixed;/*描画固定*/
-	z-index:-1;/*描画を一番下に*/
-	width: 100%;
-	height: 100%;
-	/* background-color:#35004D;背景色 */
-    background-image: url(HAIKEI2.JPG);
-    background-size: cover;
-    opacity: 0.7;
+/* 星のスタイル */
+.star {
+  position: absolute;
+  display: block;
+  background-color: #fff; /* 星の色 */
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(#fff, 0.2); /* 星の影 */
+  opacity: 0;
+  animation: twinkle 5s infinite;
 }
 
-#wrapper{
-	position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
-	z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
-	width:100%;
-	height: 100%;
-}
-/* ----------------------------- */
+/* 星がキラキラ光るアニメーション */
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
 
-/* .bg_img{
-    background: URL(test.JPG);
-    /* wight: 100%; */
-    /* height: 240px; */
-    /* background-size:cover; */
-    /* background-position:50%; */
-    /* position: relative; */
-  /* }
-  .bg_img::after {
-    content: '';
-    background-color: rgba(0,0,0,.5);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 240px;
-  } */
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
